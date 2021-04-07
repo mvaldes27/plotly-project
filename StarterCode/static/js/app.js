@@ -13,7 +13,7 @@ function updatePage() {
   console.log(selectedOption);
 }
 
-d3.json("samples.json").then(function createPlotly(data){
+d3.json("samples.json").then(function createPlotly(data) {
     // console.log(data);
     var testid = data.names;
     console.log(testid);
@@ -103,11 +103,8 @@ function optionChanged() {
   var dropdownValue = dropdownMenu.property("value");
   console.log(`Currently test id ${dropdownValue} is shown on the page`);
 
-  // Update graph
-  createPlotly(data);
-}
-  
-    
-
+ // Update graph
+ createPlotly(data);
+} 
 
 });
