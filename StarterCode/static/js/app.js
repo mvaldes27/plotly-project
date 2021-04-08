@@ -13,7 +13,7 @@
 //   console.log(selectedOption);
 // }
 
-d3.json("samples.json").then(function createPlotly(data) {
+d3.json("data/samples.json").then(function createPlotly(data) {
     // console.log(data);
     var testid = data.names;
     console.log(testid);
