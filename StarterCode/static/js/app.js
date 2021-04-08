@@ -1,17 +1,17 @@
-// Use D3 to create an event handler
-d3.selectAll("body").on("change", updatePage);
+// // Use D3 to create an event handler
+// d3.selectAll("body").on("change", updatePage);
 
-function updatePage() {
-  // Use D3 to select the dropdown menu
-  var dropdownMenu = d3.selectAll("#selectOption").node();
-  // Assign the dropdown menu item ID to a variable
-  var dropdownMenuID = dropdownMenu.id;
-  // Assign the dropdown menu option to a variable
-  var selectedOption = dropdownMenu.value;
+// function updatePage() {
+//   // Use D3 to select the dropdown menu
+//   var dropdownMenu = d3.selectAll("#selectOption").node();
+//   // Assign the dropdown menu item ID to a variable
+//   var dropdownMenuID = dropdownMenu.id;
+//   // Assign the dropdown menu option to a variable
+//   var selectedOption = dropdownMenu.value;
 
-  console.log(dropdownMenuID);
-  console.log(selectedOption);
-}
+//   console.log(dropdownMenuID);
+//   console.log(selectedOption);
+// }
 
 d3.json("samples.json").then(function createPlotly(data) {
     // console.log(data);
@@ -46,7 +46,8 @@ d3.json("samples.json").then(function createPlotly(data) {
 
     console.log(Object.entries(data.metadata[index]));
 
-      // Create a bar graph using index
+
+    // Create a bar graph using index
     var defaultsampleData = data.samples[index].sample_values
     .slice(0, 10)
     .reverse();
@@ -95,16 +96,17 @@ d3.json("samples.json").then(function createPlotly(data) {
 
   Plotly.newPlot("bubble", bubbleData, bubbleLabels);
 // When different test ID is selected, call an function optionChanged
-d3.select("#selDataset").on("change", optionChanged);
+d3.select("#selDataset").on("change", optionChanged1);
   
-function optionChanged() {
+function optionChanged1() {
   console.log("Different item was selected.");
   var dropdownMenu = d3.select("#selDataset");
   var dropdownValue = dropdownMenu.property("value");
   console.log(`Currently test id ${dropdownValue} is shown on the page`);
 
  // Update graph
- createPlotly(data);
-} 
+createPlotly(data);
+
+}
 
 });
